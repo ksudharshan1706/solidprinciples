@@ -157,6 +157,7 @@
   <ItemGroup>
     <Compile Include="DataBase\IDatabase.cs" />
     <Compile Include="Invoice\IInvoice.cs" />
+    <Compile Include="Liskov substitution Principle\Lsp.cs" />
     <Compile Include="Marker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
