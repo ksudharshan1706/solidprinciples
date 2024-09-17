@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace SolidPrinciples.Liskov_substitution_Principle
 {
+
+    public interface IBird
+    {
+        void Speak();
+    }
     public class Lsp
     {
         public void TestFunction(Bird bird)
         {
             bird.Fly();
-            bird.Speak();
         }
     }
-    public class Bird
+    public class Bird     
     {
         public string name;
         public Bird(string name)
@@ -22,19 +26,13 @@ namespace SolidPrinciples.Liskov_substitution_Principle
             this.name = name;
         }
 
-
         public virtual void Fly()
         {
             Console.WriteLine($"{this.name} Fly");
         }
-
-        public virtual void Speak()
-        {
-            Console.WriteLine($"{this.name} Speaks");
-        }
     }
 
-    public class Sparrow : Bird
+    public class Sparrow : Bird, IBird
     {
         public Sparrow(string name) : base(name)  // Calling the base class constructor
         {
@@ -46,29 +44,17 @@ namespace SolidPrinciples.Liskov_substitution_Principle
             Console.WriteLine("Sparrow Fly");
         }
 
-        public override void Speak()
+        public void Speak()
         {
             Console.WriteLine("Sparrow Speaks");
         }
     }
 
-    public class Pengiun : Bird
+    public class Pengiun : IBird
     {
-
-        public Pengiun(string name) : base(name)  // Calling the base class constructor
+        public void Speak()
         {
-            // No need to manually assign name and description here
-        }
-
-        public override void Fly()
-        {
-            throw new NotImplementedException("Cannot fly");
-        }
-
-
-        public override void Speak()
-        {
-            Console.WriteLine("Sparrow Speaks");
+            Console.WriteLine("pengiun Speaks");
         }
     }
 

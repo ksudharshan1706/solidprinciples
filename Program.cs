@@ -25,16 +25,16 @@ namespace SolidPrinciples
                 Console.Write("Please enter Bird Name: ");
                 String BirdName = Console.ReadLine();
 
-                Bird bird = new Bird(BirdName);
-                //Sparrow Sparrow = new Sparrow(BirdName);
-
-                //pengiun doesnt have the capability of flying will throw an error.
-                //this fails the Liskov substitution principle.
-
-                //Pengiun Pengiun = new Pengiun(BirdName);
+                //Bird bird = new Bird(BirdName);
+                Sparrow Sparrow = new Sparrow(BirdName);
+                //Sparrow.Speak();
                 Lsp t = new Lsp();
-                t.TestFunction(bird);
+                t.TestFunction(Sparrow);
 
+
+                //this follows the LSP principle. you wont be able to access the Fly functionality.
+                Pengiun Pengiun = new Pengiun();
+                Pengiun.Speak();
 
                 //entering the values
                 //Console.Write("Please enter the marker name: ");
